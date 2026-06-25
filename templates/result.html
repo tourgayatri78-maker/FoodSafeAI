@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>FoodSafeAI Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="result-container">
+
+    <!-- Header -->
+
+    <div class="header">
+
+        <img
+            src="{{ url_for('static', filename='images/logo.png') }}"
+            class="logo"
+            alt="FoodSafeAI Logo">
+
+        <h1>🍎 FoodSafeAI</h1>
+
+        <p>AI Powered Food Combination Analysis</p>
+
+    </div>
+
+    <!-- Foods Analyzed -->
+
+    <div class="result-card safety-card">
+
+        <h2>🍽 Foods Analyzed</h2>
+
+        <p><strong>Food 1:</strong> {{ food1 }}</p>
+
+        <p><strong>Food 2:</strong> {{ food2 }}</p>
+
+    </div>
+
+    <!-- Uploaded Image -->
+
+    {% if image_name %}
+
+    <div class="image-card">
+
+        <h2>📷 Uploaded Food Image</h2>
+
+        <img
+            src="{{ url_for('static',
+            filename='uploads/' + image_name) }}"
+            class="food-image"
+            alt="Uploaded Food">
+
+    </div>
+
+    {% endif %}
+
+    <!-- AI Analysis -->
+
+    <div class="result-card info-card">
+
+        <h2>🤖 AI Analysis</h2>
+
+        <pre class="analysis-text">{{ result }}</pre>
+
+    </div>
+
+    <!-- Buttons -->
+
+    <div class="action-buttons">
+
+        <button
+            class="btn"
+            onclick="speakResult()">
+
+            🔊 Read Analysis
+
+        </button>
+
+        <button
+            class="btn"
+            onclick="window.print()">
+
+            🖨 Print Report
+
+        </button>
+
+        <a
+            href="/"
+            class="btn">
+
+            🔙 Analyze Another
+
+        </a>
+
+    </div>
+
+</div>
+
+<script>
+
+function speakResult(){
+
+    let text =
+    document.querySelector(
+        ".analysis-text"
+    ).innerText;
+
+    let speech =
+    new SpeechSynthesisUtterance(text);
+
+    speech.lang = "en-US";
+    speech.rate = 1;
+    speech.pitch = 1;
+
+    window.speechSynthesis.speak(speech);
+}
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodSafeAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="hero">
+
+    <div class="container">
+
+        <!-- Logo -->
+
+        <div class="logo-section">
+
+            <img
+                src="{{ url_for('static', filename='images/logo.png') }}"
+                class="logo"
+                alt="FoodSafeAI Logo">
+
+            <h1>🍎 FoodSafeAI</h1>
+
+            <p class="subtitle">
+                Smart AI Food Combination Analyzer
+            </p>
+
+        </div>
+
+        <!-- Features -->
+
+        <div class="features">
+
+            <div class="feature-card">
+                🤖 AI Powered Analysis
+            </div>
+
+            <div class="feature-card">
+                🎤 Voice Input
+            </div>
+
+            <div class="feature-card">
+                📷 Image Upload
+            </div>
+
+            <div class="feature-card">
+                🌍 Multi Language Support
+            </div>
+
+        </div>
+
+        <!-- Form -->
+
+        <form
+            action="/check"
+            method="POST"
+            enctype="multipart/form-data">
+
+            <!-- Food 1 -->
+
+            <input
+                type="text"
+                id="food1"
+                name="food1"
+                placeholder="🥛 Enter First Food"
+                required>
+
+            <!-- Food 2 -->
+
+            <input
+                type="text"
+                id="food2"
+                name="food2"
+                placeholder="🐟 Enter Second Food"
+                required>
+
+            <!-- Voice Button -->
+
+            <button
+                 type="button" onclick="startVoiceInput()">
+                 🎤 Speak Foods
+            </button>
+
+            <!-- Language -->
+
+            <select name="language">
+
+                <option value="English">
+                    English
+                </option>
+
+                <option value="Hindi">
+                    Hindi
+                </option>
+
+                <option value="Marathi">
+                    Marathi
+                </option>
+
+                <option value="Gujarati">
+                    Gujarati
+                </option>
+
+                <option value="Tamil">
+                    Tamil
+                </option>
+
+            </select>
+
+            <!-- Image Upload -->
+
+            <input
+                type="file"
+                name="food_image"
+                id="food_image"
+                accept="image/*"
+                onchange="previewImage(event)">
+
+            <!-- Image Preview -->
+
+            <img
+                id="preview"
+                src=""
+                style="
+                    display:none;
+                    max-width:250px;
+                    margin:15px auto;
+                    border-radius:15px;
+                    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+                ">
+
+            <!-- Analyze Button -->
+
+            <button
+                type="submit"
+                class="analyze-btn">
+
+                🔍 Analyze Food Combination
+
+            </button>
+
+        </form>
+
+        <!-- Stats -->
+
+        <div class="stats">
+
+            <div class="stat-card">
+                🍎 Food Safety
+            </div>
+
+            <div class="stat-card">
+                🤖 AI Analysis
+            </div>
+
+            <div class="stat-card">
+                🌍 Multi Language
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Image Preview Script -->
+
+<script>
+
+function previewImage(event){
+
+    let image =
+    document.getElementById("preview");
+
+    image.src =
+    URL.createObjectURL(
+        event.target.files[0]
+    );
+
+    image.style.display =
+    "block";
+}
+
+</script>
+
+<!-- Voice Script -->
+
+<script src="{{ url_for('static', filename='js/voice.js') }}"></script>
+
+</body>
+
+</html>

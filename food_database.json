@@ -1,0 +1,89 @@
+{
+    "milk_fish": {
+        "safety_score": 65,
+        "status": "Use With Caution",
+        "effects": [
+            "Digestive discomfort",
+            "Bloating",
+            "Indigestion"
+        ],
+        "symptoms": [
+            "Gas",
+            "Stomach pain",
+            "Nausea"
+        ],
+        "advice": "Avoid consuming together frequently. Drink water and monitor symptoms."
+    },
+
+    "banana_milk": {
+        "safety_score": 85,
+        "status": "Generally Safe",
+        "effects": [
+            "May cause bloating in some people"
+        ],
+        "symptoms": [
+            "Mild heaviness"
+        ],
+        "advice": "Safe for most people when consumed in moderation."
+    },
+
+    "curd_fish": {
+        "safety_score": 60,
+        "status": "Use With Caution",
+        "effects": [
+            "Digestive discomfort"
+        ],
+        "symptoms": [
+            "Bloating",
+            "Acidity"
+        ],
+        "advice": "Sensitive individuals may avoid this combination."
+    },
+
+    "tea_lemon": {
+        "safety_score": 95,
+        "status": "Safe",
+        "effects": [
+            "Generally beneficial"
+        ],
+        "symptoms": [],
+        "advice": "Safe and commonly consumed."
+    },
+
+    "milk_orange": {
+        "safety_score": 70,
+        "status": "Use With Caution",
+        "effects": [
+            "May curdle in the stomach",
+            "Digestive discomfort"
+        ],
+        "symptoms": [
+            "Bloating",
+            "Upset stomach"
+        ],
+        "advice": "Wait some time between consuming milk and citrus fruits."
+    },
+
+    "egg_fish": {
+        "safety_score": 90,
+        "status": "Safe",
+        "effects": [
+            "High protein meal"
+        ],
+        "symptoms": [],
+        "advice": "Generally safe unless allergic."
+    },
+
+    "watermelon_milk": {
+        "safety_score": 75,
+        "status": "Use With Caution",
+        "effects": [
+            "May cause digestive issues in some people"
+        ],
+        "symptoms": [
+            "Gas",
+            "Bloating"
+        ],
+        "advice": "Consume separately if sensitive."
+    }
+}
